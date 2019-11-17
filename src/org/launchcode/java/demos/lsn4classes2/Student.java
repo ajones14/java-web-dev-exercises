@@ -46,6 +46,12 @@ public class Student {
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
         // Update the appropriate fields: numberOfCredits, gpa
+
+        double addQualityScore = grade * courseCredits;
+        double currentQualityScore = (this.gpa * this.numberOfCredits) + addQualityScore;
+        this.numberOfCredits += courseCredits;
+        this.gpa = currentQualityScore / this.numberOfCredits;
+
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
