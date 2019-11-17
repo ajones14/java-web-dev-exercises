@@ -1,5 +1,7 @@
 package org.launchcode.java.demos.lsn4classes2;
 
+import java.util.Objects;
+
 public class Student {
 
     private static int nextStudentId = 1;
@@ -40,6 +42,8 @@ public class Student {
             return "Junior";
         } else if (this.numberOfCredits > 89) {
             return "Senior";
+        } else {
+            return "Unknown";
         }
     }
 
@@ -57,8 +61,47 @@ public class Student {
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
 
+    public String toString(Object input) {
+
+        String output = "";
+        if (!this.name.equals("")) {
+            output += "Name: " + this.name;
+        }
+        if (this.studentId != 0) {
+            output += "Student Id: " + this.studentId;
+        }
+        if (this.numberOfCredits != 0) {
+            output += "Number of Credits: " + this.numberOfCredits;
+        }
+        if (this.gpa != 0) {
+            output += "GPA: " + this.gpa;
+        }
+
+        return output;
+
+    }
+
     // TODO: Add your custom 'equals' method here. Consider which fields should match in order to call two
     //  Student objects equal.
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return studentId == student.studentId &&
+                numberOfCredits == student.numberOfCredits &&
+                Double.compare(student.gpa, gpa) == 0 &&
+                Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, studentId, numberOfCredits, gpa);
+    }
+
+
+
 
     public String getName() {
         return name;
