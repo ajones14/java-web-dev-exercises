@@ -63,21 +63,8 @@ public class Student {
 
     public String toString(Object input) {
 
-        String output = "";
-        if (!this.name.equals("")) {
-            output += "Name: " + this.name;
-        }
-        if (this.studentId != 0) {
-            output += "Student Id: " + this.studentId;
-        }
-        if (this.numberOfCredits != 0) {
-            output += "Number of Credits: " + this.numberOfCredits;
-        }
-        if (this.gpa != 0) {
-            output += "GPA: " + this.gpa;
-        }
-
-        return output;
+        return "Name: " + this.name + "(Student Id: " + this.studentId +
+                "Number of Credits: " + this.numberOfCredits +  "GPA: " + this.gpa + ")";
 
     }
 
@@ -89,10 +76,7 @@ public class Student {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Student student = (Student) o;
-        return studentId == student.studentId &&
-                numberOfCredits == student.numberOfCredits &&
-                Double.compare(student.gpa, gpa) == 0 &&
-                Objects.equals(name, student.name);
+        return studentId == student.studentId;
     }
 
     @Override
