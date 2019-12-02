@@ -1,8 +1,6 @@
 package org.launchcode.java.demos.lsn7interfaces;
 
-
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Main {
     public static void main(String[] args){
@@ -15,41 +13,30 @@ public class Main {
         for (Flavor flavor : flavors) {
             System.out.println(flavor.getName() + ", #ofAllergens: " + flavor.getAllergens().size());
         }
-        System.out.println("\n");
-        System.out.println("Cones Before:");
+        System.out.println("\nCones Before:");
         for (Cone cone : cones) {
             System.out.println(cone.getName() + ": " + cone.getCost());
         }
-        System.out.println("\n");
-        System.out.println("Toppings Before:");
+        System.out.println("\nToppings Before:");
         for (Topping topping : toppings) {
             System.out.println(topping.getName() + ": " + topping.getCost());
         }
-        System.out.println("\n");
 
-        // TODO: Use a Comparator class to sort the 'flavors' array alphabetically by the 'name'
-        //  field.
         flavors.sort(new FlavorComparator());
         cones.sort(new ConeComparator());
         toppings.sort(new ToppingComparator());
-        // TODO: Use a Comparator class to sort the 'cones' array in increasing order by the 'cost'
-        //  field.
 
-        // TODO: Print the 'flavors' and 'cones' lists (in a clear manner) to verify the sorting.
-        System.out.println("Flavors After:");
+        System.out.println("\nFlavors After:");
         for (Flavor flavor : flavors) {
             System.out.println(flavor.getName() + ", #ofAllergens: " + flavor.getAllergens().size());
         }
-        System.out.println("\n");
-        System.out.println("Cones After:");
+        System.out.println("\nCones After:");
         for (Cone cone : cones) {
             System.out.println(cone.getName() + ": " + cone.getCost());
         }
-        System.out.println("\n");
-        System.out.println("Toppings After:");
+        System.out.println("\nToppings After:");
         for (Topping topping : toppings) {
             System.out.println(topping.getName() + ": " + topping.getCost());
         }
-
     }
 }

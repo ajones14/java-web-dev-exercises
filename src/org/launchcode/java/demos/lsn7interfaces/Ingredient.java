@@ -21,9 +21,7 @@ public abstract class Ingredient {
         this.name = name;
     }
 
-    public double getCost() {
-        return cost;
-    }
+    public double getCost() { return cost; }
 
     public void setCost(double cost) {
         this.cost = cost;
